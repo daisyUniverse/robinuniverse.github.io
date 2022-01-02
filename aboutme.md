@@ -1,16 +1,9 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: I Exist
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Hi! I'm Robin Universe! I'm a dev/artist who is pretty much entirely self taught, as a result of this I typically think of very cursed solutions to problems that work anyways. This is the art of the bodge.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
-
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I hope y'all like the Blog!
