@@ -57,19 +57,19 @@ This was now being spun into a privacy concern, at first, the misunderstandings 
 Let me just do a lightning round of the misconceptions I've seen, roughly in the order that I saw them appear
 
 MISCONCEPTIONS/RUMORS
-1. I look at every single tweet that is used, and I report hundreds of tweets including all porn, because I'm a prude
+*I look at every single tweet that is used, and I report hundreds of tweets including all porn, because I'm a prude*
 
 Literally a large chunk of my audience I had was from adult audiences, which I specifically catered features to ( a huge amount of work went into making fxtwt work with posts other than videos specifically to allow for adult audiences to bypass the broken embeds specific to them )
 
-2. I somehow know who posts what, and when I see things I don't like posted, I report that user
+*I somehow know who posts what, and when I see things I don't like posted, I report that user*
 
 No, just, no. something like that isn't even possible ( for reasons I will get into later in the technical section of this blog post )
 
-3. I am making FBI or some other kind of legal report
+*I am making FBI or some other kind of legal report*
 
 Nope! Just to Twitter! I don't have nearly enough useful data to do something like that even if I thought it was warranted
 
-4. TwitFix was logging the messages and DMS of the servers of everyone that used it
+*TwitFix was logging the messages and DMS of the servers of everyone that used it*
 
 This is just ridiculous and unhinged but I did see it more than once, TwitFix isn't a Discord bot that sits in every server and listens to every word you say, that's just, not how the internet works. When TwitFix is used, the only thing I can see is the IP of the Discord Embed Scraper Robot that grabs the post content, these robots are extremely generic and cannot even be used to identify a region much less a server
 
@@ -78,7 +78,7 @@ The last few days have been complete hell for me. I'm a fairly non confrontation
 
 So I made the decision to finally drop the TwitFix project - this was a long time coming, to be fair, if you have read my previous post, you'd know I was already on the fence about it, but as I've been telling people, this was the boulder that broke the camel's back. I made the embed show a goodbye message, and I stepped away
 
-## Technical Part
+## The Technical Part
 
 Ok, I'm now going to explain, in enough detail that I think is followable, just how TwitFix worked, start to finish, just so I can possibly ease some fears that people may still have. I will represent the function of TwitFix on a pipeline, from Discord, to my server, back to Discord, showing each major step of data processing necessary.
 
@@ -89,16 +89,16 @@ This is the part where my server comes into play
 
 ### MY SERVER
 
-1. Request
+*Request*
 
 I will get the request from Discord, specifically, I receive the request from the IP of one of many different Discord Embed Scraper Bots, which is the component of Discord that is responsible for gathering all of the data that goes into the embed, and also assures that there is no direct contact between my server, and the user.
 All of the data I need from the request is contained within the text of the url, which I can use to determine which tweet it is this request is looking for
 
-2. Twitter API
-T
-his is the part where though the process of regex magic, I find out which specific tweet the user wants, I will then ask my database if I've already gotten data for this tweet before, and if I haven't, I'll proceed to ask Twitter for all of the data for that particular tweet
+*Twitter API*
 
-3. The Tweet Cache
+This is the part where though the process of regex magic, I find out which specific tweet the user wants, I will then ask my database if I've already gotten data for this tweet before, and if I haven't, I'll proceed to ask Twitter for all of the data for that particular tweet
+
+*The Tweet Cache*
 
 At this point, I will do some processing to find out some basic info about the tweet, as each type of tweet requires they be stored in their own way, as a **VNF** ( This stood for Video iNFo, but after I added support for non video tweets, it just stuck )
 Here is a full example of a typical VNF, this is literally all of the data, besides the stats, that I retain
@@ -126,7 +126,7 @@ Here is a full example of a typical VNF, this is literally all of the data, besi
 
 This is the full and complete data that is added to a big dumb pile in my database, which I then call from, this ensures that no matter what, no matter how many users I have, I only ever hit Twitters API once per tweet, this is the only thing that makes TwitFix as a service even halfway viable for someone like me working at the scale I was working at.
 
-4. Building the Embed
+*Building the Embed*
 
 Depending on the type of tweet, embeds are pretty drastically different, so it is necessary for me to dynamically interpret the tweet content to build the embed from a number of render templates that I use
 This process is fairly complex, and I don't intend for this blog post to be a full deep dive into the technical aspects of the process, as much as it is just to teach people how the parts that relate to this issue work, and embed building is fairly inconsequential in this context, so for now, we'll call it a black box, you put a tweet in, and a fresh html file comes out that represents all the data that Discord needs to build the embed for the user, which is then returned to Discord
