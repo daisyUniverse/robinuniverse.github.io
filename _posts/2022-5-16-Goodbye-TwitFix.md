@@ -1,6 +1,6 @@
 ---
 title: Goodbye, TwitFix!
-subtitle: So long, and thanks, for all the fish!
+subtitle: So long, and thanks for all the fix!
 ---
 
 # Goodbye, TwitFix!
@@ -23,12 +23,12 @@ I probably did this to about half a dozen posts in total, which makes what is co
 
 About a week or so ago, I started adding a message of the day to TwitFix, it wasn't much, it was usually just some little quote or some joke I thought of that day, and it would link to random funny videos or websites that I thought related to the message - Most people seemed to not mind, it's my service, and I can do what I like with it after all, and it didn't detract any usage from embeds, so I figured there was no harm in it
 
-I started getting the first bits of hate messages when I changed it to say "Trans Rights are Human Rights!", which if you know me, you know that means quite a lot to me! But this seemed to be the line for a lot of people, for some reason. I fear this is where I started to appear on the radar on a few people.
+I started getting the first bits of hate messages when I changed it to say "Trans Rights are Human Rights!", which if you know me, you know that means quite a lot to me! But this seemed to be the line for a lot of people, for some reason. I fear this is where I started to appear on the radar of a few people.
 I have to admit, after this point I did start to take the piss a little bit, partially because it made weirdos mad, and partially because I hoped someone would finally fork TwitFix so I could finally move on to something else in my life
 
 ### STAGE 01 - BetterTwitFix
 
-When I woke up and saw that someone had finally fulfilled my wish and forked a live instance of TwitFix, I thought that was a cause for celebration, I tweeted out an announcement, I added a link to the repo as my MOTD, I even had an extra cup of coffeee. There were a few changes to the code that I thought were a little strange, namely the fact that they removed the code responsible for all TwitFix API endpoints, and strangely enough, the stat tracking functionality
+When I woke up and saw that someone had finally fulfilled my wish and forked a live instance of TwitFix, I thought that was a cause for celebration, I tweeted out an announcement, I added a link to the repo as my MOTD, I even had an extra cup of coffee. There were a few changes to the code that I thought were a little strange, namely the fact that they removed the code responsible for all TwitFix API endpoints, and strangely enough, the stat tracking functionality
 
 (The stat tracking data was basically a daily count of how many times embeds were served and how many new links were cached, an example of that data follows:)
 
