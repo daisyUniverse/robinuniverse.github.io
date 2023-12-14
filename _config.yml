@@ -6,10 +6,10 @@
 # --- Required options --- #
 
 # Name of website
-title: Robin's Blog
+title: Daisy's Blog
 
 # Your name to show in the footer
-author: Robin Universe
+author: Daisy Universe
 
 # --- List of links in the navigation bar --- #
 
@@ -36,9 +36,9 @@ round-avatar: true
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "rshaddock@elgin.edu"
-  github: robinuniverse
-  twitter: RobinUniverse_
+  email: "runiverse@elgin.edu"
+  github: daisyuniverse
+  twitter: DaisyQUniverse
   youtube: c/eshaddock
 #  medium: yourname
 #  reddit: yourname
